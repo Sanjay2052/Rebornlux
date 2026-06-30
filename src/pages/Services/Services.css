@@ -1,0 +1,199 @@
+.services-section-wrapper {
+  max-width: none !important;
+  width: 100% !important;
+  background: #ffffff;
+  padding: 0 !important;
+  color: #121829;
+  position: relative;
+  z-index: 20;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.services-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: sticky;
+  top: 120px;
+}
+
+.services-heading {
+  font-size: 2.6rem;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #121829;
+  margin-bottom: 24px;
+  font-family: var(--font-heading);
+}
+
+.services-paragraph {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.btn-services-outline {
+  background: transparent;
+  border: 1.5px solid #1d4ed8;
+  color: #1d4ed8;
+  padding: 14px 36px;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-services-outline:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.2);
+}
+
+/* Services cards on right */
+.services-right {
+  width: 100%;
+}
+
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.service-grid-card {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 30px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 45px rgba(18, 24, 41, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  min-height: 280px;
+  text-align: left;
+}
+
+.service-grid-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(18, 24, 41, 0.1);
+  border-color: #e5e7eb;
+}
+
+.service-card-icon-container {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(29, 78, 216, 0.06);
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  transition: all 0.3s ease;
+}
+
+.service-grid-card:hover .service-card-icon-container {
+  transform: scale(1.05);
+}
+
+.service-card-title {
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: #121829;
+  margin-bottom: 12px;
+  line-height: 1.35;
+  font-family: var(--font-heading);
+}
+
+.service-card-desc {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Highlighted (Native App) Card Style */
+.service-grid-card.highlighted {
+  background: linear-gradient(135deg, #1d4ed8 0%, #00b4dc 100%);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 20px 50px rgba(29, 78, 216, 0.28);
+}
+
+.service-grid-card.highlighted:hover {
+  box-shadow: 0 30px 70px rgba(29, 78, 216, 0.42);
+}
+
+.service-grid-card.highlighted .service-card-icon-container {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.service-grid-card.highlighted .service-card-title {
+  color: #ffffff;
+}
+
+.service-grid-card.highlighted .service-card-desc {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Overlapping effect on desktop */
+@media (min-width: 1025px) {
+  .services-right {
+    margin-top: -160px; /* Pulls cards upward to overlap the Hero section background */
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 20px;
+  }
+  .services-left {
+    position: static;
+    align-items: center;
+    text-align: center;
+  }
+  .services-heading {
+    font-size: 2.2rem;
+  }
+  .services-paragraph {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-right {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .service-grid-card {
+    min-height: auto;
+    padding: 30px 24px;
+  }
+}

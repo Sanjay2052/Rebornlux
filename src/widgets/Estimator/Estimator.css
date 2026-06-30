@@ -1,0 +1,331 @@
+.estimator-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  text-align: left;
+}
+
+.estimator-inputs {
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent-cyan);
+  padding-left: 12px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.project-type-card {
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.project-type-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-type-card.active {
+  background: var(--accent-blue-gradient);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.complexity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.complexity-card {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.complexity-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.complexity-card.active {
+  background: linear-gradient(135deg, var(--accent-purple) 0%, #a855f7 100%);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.2);
+}
+
+.complexity-num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-purple);
+}
+
+.complexity-card.active .complexity-num {
+  color: #ffffff;
+}
+
+.complexity-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.complexity-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.feature-card {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.feature-card.active {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--accent-cyan);
+}
+
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-header input[type="checkbox"] {
+  accent-color: var(--accent-cyan);
+  cursor: pointer;
+}
+
+.feature-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.feature-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Output card styling */
+.estimator-output {
+  padding: 40px;
+  border: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.output-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.output-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.metric-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metric-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.metric-icon-wrapper.cyan {
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+.metric-icon-wrapper.purple {
+  background: rgba(157, 78, 221, 0.1);
+  color: var(--accent-purple);
+  border: 1px solid rgba(157, 78, 221, 0.2);
+}
+
+.metric-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.metric-val {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.tech-recommendation {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tech-rec-title {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+}
+
+.sparkle-icon {
+  color: var(--accent-cyan);
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  padding: 4px 10px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: var(--text-primary);
+}
+
+.guarantees {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.g-icon {
+  color: var(--accent-cyan);
+}
+
+.btn-estimate-submit {
+  width: 100%;
+  background: var(--grad-primary);
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-estimate-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.35);
+}
+
+@media (max-width: 1024px) {
+  .estimator-container {
+    grid-template-columns: 1fr;
+  }
+  .estimator-output {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .estimator-inputs {
+    padding: 24px;
+  }
+  .complexity-grid {
+    grid-template-columns: 1fr;
+  }
+}
