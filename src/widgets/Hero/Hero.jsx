@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { ArrowRight, ChevronDown, Sparkles, Code2, Cpu, Cloud, Database, Layers } from 'lucide-react';
+import { ArrowRight, ChevronDown, Sparkles, Code2, Cpu, Cloud, Database, Layers, Smartphone } from 'lucide-react';
 import './Hero.css';
 
 export default function Hero() {
@@ -170,6 +170,10 @@ export default function Hero() {
             <div className="floating-tech-pill pill-node">
               <Layers size={14} />
               <span>Node.js</span>
+            </div>
+            <div className="floating-tech-pill pill-flutter">
+              <Smartphone size={14} />
+              <span>Flutter</span>
             </div>
             <div className="floating-tech-pill pill-mongo">
               <Database size={14} />

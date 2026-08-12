@@ -259,32 +259,38 @@
 }
 
 .pill-react {
-  top: 20px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   animation-delay: 0s;
 }
 
 .pill-node {
-  top: 60px;
-  right: 0px;
+  top: 40px;
+  right: 10px;
   animation-delay: 1s;
 }
 
+.pill-flutter {
+  top: 175px;
+  right: -15px;
+  animation-delay: 2.5s;
+}
+
 .pill-mongo {
-  bottom: 40px;
-  right: 20px;
+  bottom: 25px;
+  right: 15px;
   animation-delay: 2s;
 }
 
 .pill-cloud {
-  bottom: 30px;
-  left: 20px;
+  bottom: 25px;
+  left: 15px;
   animation-delay: 3s;
 }
 
 .pill-ai {
-  top: 180px;
-  left: -10px;
+  top: 175px;
+  left: -15px;
   animation-delay: 1.5s;
 }
 
@@ -329,12 +335,19 @@
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(6px);
   }
+
   60% {
     transform: translateY(3px);
   }
@@ -380,46 +393,78 @@
     width: 300px;
     height: 300px;
   }
-  .ring-1 { width: 180px; height: 180px; }
-  .ring-2 { width: 240px; height: 240px; }
-  .ring-3 { width: 290px; height: 290px; }
+
+  .ring-1 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .ring-2 {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ring-3 {
+    width: 290px;
+    height: 290px;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-container {
     padding: 0 16px;
   }
+
   .hero-title {
     font-size: 2.1rem;
   }
+
   .hero-desc {
     font-size: 0.98rem;
     margin-bottom: 28px;
   }
+
   .hero-actions {
     width: 100%;
     flex-direction: column;
     gap: 12px;
   }
+
   .btn-hero-primary,
   .btn-hero-secondary {
     width: 100%;
     padding: 12px 20px;
   }
+
   .hero-pillars {
     padding: 10px 14px;
     gap: 10px;
   }
+
   .pillar-item {
     font-size: 0.78rem;
   }
+
   .tech-3d-visual {
     width: 250px;
     height: 250px;
   }
-  .ring-1 { width: 140px; height: 140px; }
-  .ring-2 { width: 190px; height: 190px; }
-  .ring-3 { width: 240px; height: 240px; }
+
+  .ring-1 {
+    width: 140px;
+    height: 140px;
+  }
+
+  .ring-2 {
+    width: 190px;
+    height: 190px;
+  }
+
+  .ring-3 {
+    width: 240px;
+    height: 240px;
+  }
+
   .floating-tech-pill {
     padding: 4px 10px;
     font-size: 0.72rem;
