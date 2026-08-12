@@ -1,13 +1,27 @@
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { ArrowRight, ChevronDown, Sparkles, Code2, Cpu, Cloud, Database, Layers, Smartphone } from 'lucide-react';
+import {
+  ArrowRight,
+  ChevronDown,
+  Sparkles,
+  Code2,
+  Cpu,
+  Cloud,
+  Database,
+  Layers,
+  Smartphone,
+  FileCode,
+  Zap,
+  Globe
+} from 'lucide-react';
 import './Hero.css';
 
 export default function Hero() {
   const { t } = useLanguage();
   const canvasRef = useRef(null);
+  const mouseRef = useRef({ x: -1000, y: -1000 });
 
-  // Animated Technology Particle Mesh Canvas
+  // Interactive Particle Mesh Canvas with Light Theme Trajectory Response
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -23,23 +37,41 @@ export default function Hero() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle nodes
-    const particleCount = 50;
+    const handleMouseMove = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseRef.current = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      };
+    };
+
+    const handleMouseLeave = () => {
+      mouseRef.current = { x: -1000, y: -1000 };
+    };
+
+    const parent = canvas.parentElement;
+    parent.addEventListener('mousemove', handleMouseMove);
+    parent.addEventListener('mouseleave', handleMouseLeave);
+
+    // Dynamic particle nodes tailored for light theme
+    const particleCount = 65;
     const particles = [];
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: Math.random() * 2 + 1
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 2 + 1,
+        alpha: Math.random() * 0.5 + 0.3
       });
     }
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const mouse = mouseRef.current;
 
-      // Draw particle mesh connections
+      // Update and draw particles
       for (let i = 0; i < particleCount; i++) {
         const p1 = particles[i];
         p1.x += p1.vx;
@@ -48,19 +80,37 @@ export default function Hero() {
         if (p1.x < 0 || p1.x > canvas.width) p1.vx *= -1;
         if (p1.y < 0 || p1.y > canvas.height) p1.vy *= -1;
 
+        // Mouse interaction: soft push effect
+        const distMouse = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
+        if (distMouse < 120) {
+          const angle = Math.atan2(p1.y - mouse.y, p1.x - mouse.x);
+          const force = (120 - distMouse) / 120;
+          p1.x += Math.cos(angle) * force * 1.5;
+          p1.y += Math.sin(angle) * force * 1.5;
+
+          // Connect to mouse with cyan-blue beam line
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(0, 119, 182, ${0.45 * force})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+
         ctx.beginPath();
         ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 210, 254, 0.5)';
+        ctx.fillStyle = `rgba(0, 119, 182, ${p1.alpha})`;
         ctx.fill();
 
+        // Connect node to nearby nodes
         for (let j = i + 1; j < particleCount; j++) {
           const p2 = particles[j];
           const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-          if (dist < 130) {
+          if (dist < 140) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 119, 182, ${0.18 * (1 - dist / 130)})`;
+            ctx.strokeStyle = `rgba(0, 119, 182, ${0.25 * (1 - dist / 140)})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -74,6 +124,8 @@ export default function Hero() {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      parent.removeEventListener('mousemove', handleMouseMove);
+      parent.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -99,12 +151,23 @@ export default function Hero() {
     <section id="hero" className="hero-section">
       <canvas ref={canvasRef} className="hero-particle-canvas" />
 
+      {/* Decorative Light Theme Lighting Gradients */}
+      <div className="hero-glow-orb hero-glow-1"></div>
+      <div className="hero-glow-orb hero-glow-2"></div>
+
       <div className="hero-container">
-        {/* Left Column: Premium Text Messaging */}
+        {/* Left Column: Headline & Messaging */}
         <div className="hero-content">
-          <div className="hero-badge">
-            <Sparkles size={16} className="hero-badge-icon" />
-            <span>{t('hero.badgeVerified')}</span>
+          <div className="hero-badges-wrapper">
+            <div className="hero-badge">
+              <Sparkles size={15} className="hero-badge-icon" />
+              <span>{t('hero.badgeVerified')}</span>
+            </div>
+
+            <div className="hero-status-pill">
+              <span className="pulse-dot"></span>
+              <span>{t('hero.liveBadge')}</span>
+            </div>
           </div>
 
           <h1 className="hero-title">
@@ -135,7 +198,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Core Feature Highlights */}
+          {/* Core Architecture Pillars */}
           <div className="hero-pillars">
             <div className="pillar-item">
               <Code2 size={16} className="pillar-icon" />
@@ -154,44 +217,87 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Column: Abstract 3D Digital / AI Technology Graphic with Floating Tech Labels */}
+        {/* Right Column: Light Theme Quantum Holographic Matrix */}
         <div className="hero-visual-col">
           <div className="tech-3d-visual">
-            <div className="glowing-core"></div>
-            <div className="orbital-ring ring-1"></div>
-            <div className="orbital-ring ring-2"></div>
+            <div className="glowing-core-glow"></div>
+            
+            {/* Quantum Core Emblem */}
+            <div className="quantum-core">
+              <div className="core-crystal">
+                <Sparkles size={28} className="crystal-icon" />
+              </div>
+              <div className="laser-ring"></div>
+            </div>
+            
+            {/* Multi-Axis Orbital Holographic Rings */}
+            <div className="orbital-ring ring-1">
+              <span className="orbit-node node-1"></span>
+            </div>
+            <div className="orbital-ring ring-2">
+              <span className="orbit-node node-2"></span>
+            </div>
             <div className="orbital-ring ring-3"></div>
+            <div className="orbital-ring ring-4"></div>
 
-            {/* Small Floating Technology Labels */}
+            {/* Connecting Laser Beams Overlay SVG */}
+            <svg className="tech-beam-svg" viewBox="0 0 440 440">
+              <line x1="220" y1="220" x2="310" y2="30" className="laser-beam beam-react" />
+              <line x1="220" y1="220" x2="380" y2="140" className="laser-beam beam-node" />
+              <line x1="220" y1="220" x2="390" y2="280" className="laser-beam beam-flutter" />
+              <line x1="220" y1="220" x2="280" y2="400" className="laser-beam beam-mongo" />
+              <line x1="220" y1="220" x2="50" y2="340" className="laser-beam beam-cloud" />
+              <line x1="220" y1="220" x2="40" y2="170" className="laser-beam beam-ai" />
+              <line x1="220" y1="220" x2="90" y2="45" className="laser-beam beam-python" />
+            </svg>
+
+            {/* Floating Light Theme Tech Stack Cards */}
             <div className="floating-tech-pill pill-react">
-              <Code2 size={14} />
+              <div className="pill-badge-icon icon-react"><Code2 size={15} /></div>
               <span>React</span>
+              <span className="pill-status-dot"></span>
             </div>
+
             <div className="floating-tech-pill pill-node">
-              <Layers size={14} />
+              <div className="pill-badge-icon icon-node"><Layers size={15} /></div>
               <span>Node.js</span>
+              <span className="pill-status-dot"></span>
             </div>
+
             <div className="floating-tech-pill pill-flutter">
-              <Smartphone size={14} />
+              <div className="pill-badge-icon icon-flutter"><Smartphone size={15} /></div>
               <span>Flutter</span>
+              <span className="pill-status-dot"></span>
             </div>
+
+            <div className="floating-tech-pill pill-python">
+              <div className="pill-badge-icon icon-python"><FileCode size={15} /></div>
+              <span>Python</span>
+              <span className="pill-status-dot"></span>
+            </div>
+
             <div className="floating-tech-pill pill-mongo">
-              <Database size={14} />
+              <div className="pill-badge-icon icon-mongo"><Database size={15} /></div>
               <span>MongoDB</span>
+              <span className="pill-status-dot"></span>
             </div>
+
             <div className="floating-tech-pill pill-cloud">
-              <Cloud size={14} />
-              <span>Cloud</span>
+              <div className="pill-badge-icon icon-cloud"><Cloud size={15} /></div>
+              <span>AWS Cloud</span>
+              <span className="pill-status-dot"></span>
             </div>
+
             <div className="floating-tech-pill pill-ai">
-              <Cpu size={14} />
-              <span>AI</span>
+              <div className="pill-badge-icon icon-ai"><Cpu size={15} /></div>
+              <span>AI Engine</span>
+              <span className="pill-status-dot"></span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Subtle "Scroll to explore ↓" indicator */}
+      {/* Subtle Scroll Indicator */}
       <div className="hero-scroll-indicator">
         <a href="#solutions" onClick={(e) => handleScrollClick(e, '#solutions')} aria-label="Scroll to explore">
           <span className="scroll-text">{t('hero.scrollIndicator')}</span>

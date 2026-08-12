@@ -19,10 +19,25 @@ export const translations = {
       secondaryCta: 'Explore Our Work',
       scrollIndicator: 'Scroll to explore ↓',
       badgeVerified: 'REBORNLUX DIGITAL ARCHITECTURE',
+      liveBadge: 'SYSTEMS ONLINE & OPERATIONAL',
       pillars: {
         engineering: 'High-Performance Engineering',
         cloud: 'Cloud-Native Scale',
         ai: 'AI Integration'
+      },
+      stats: {
+        uptime: '99.99%',
+        uptimeLabel: 'Architecture Uptime',
+        latency: '< 50ms',
+        latencyLabel: 'Response SLA',
+        projects: '100+',
+        projectsLabel: 'Enterprise Deployments'
+      },
+      cardWidget: {
+        systemHealth: 'System Health',
+        optimal: 'Optimal Performance',
+        activeServices: 'Microservices Active',
+        activeValue: '24 / 24 Clusters'
       }
     },
     techStack: {
@@ -332,10 +347,25 @@ export const translations = {
       secondaryCta: 'استكشف أعمالنا',
       scrollIndicator: 'تمرير للاستكشاف ↓',
       badgeVerified: 'هندسة ريبورن لوكس ديجيتال',
+      liveBadge: 'الأنظمة متصلة وتعمل بكفاءة',
       pillars: {
         engineering: 'هندسة عالية الأداء',
         cloud: 'توسع سحابي أصلي',
         ai: 'تكامل الذكاء الاصطناعي'
+      },
+      stats: {
+        uptime: '99.99%',
+        uptimeLabel: 'جاهزية البنية التحتية',
+        latency: 'أقل من 50ms',
+        latencyLabel: 'اتفاقية سرعة الاستجابة',
+        projects: '+100',
+        projectsLabel: 'نُشر بنجاح'
+      },
+      cardWidget: {
+        systemHealth: 'حالة النظام',
+        optimal: 'أداء ممتاز',
+        activeServices: 'الخدمات الميكروية النشطة',
+        activeValue: '24 / 24 العناقيد'
       }
     },
     techStack: {
