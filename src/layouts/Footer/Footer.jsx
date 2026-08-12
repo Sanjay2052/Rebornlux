@@ -83,18 +83,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Resources */}
-          <div className="footer-col">
-            <h4 className="footer-col-title">{t('footer.resourcesCol')}</h4>
-            <ul className="footer-links-list">
-              <li><a href="#techstack" onClick={(e) => handleScrollClick(e, '#techstack')}>{t('footer.links.supportedTech')}</a></li>
-              <li><a href="#success-stories" onClick={(e) => handleScrollClick(e, '#success-stories')}>{t('footer.links.caseStudies')}</a></li>
-              <li><a href="#about" onClick={(e) => handleScrollClick(e, '#about')}>{t('footer.links.archSpecs')}</a></li>
-              <li><a href="#contact" onClick={(e) => handleScrollClick(e, '#contact')}>{t('footer.links.faqs')}</a></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Contact & Newsletter */}
+          {/* Column 3: Contact & Newsletter */}
           <div className="footer-col contact-newsletter-col">
             <h4 className="footer-col-title">{t('footer.contactCol')}</h4>
             

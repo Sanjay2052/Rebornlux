@@ -82,48 +82,64 @@
   box-shadow: 0 4px 14px rgba(0, 119, 182, 0.25);
 }
 
-/* Marquee Carousel Track - Decreased speed (75s duration) for smooth readability */
+/* Dual-Row Marquee Carousel Track */
 .tech-marquee-wrapper {
   overflow: hidden;
   position: relative;
   padding: 12px 0;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .tech-marquee-track {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: techMarquee 75s linear infinite;
+}
+
+.marquee-track-left {
+  animation: techMarqueeLeft 70s linear infinite;
+}
+
+.marquee-track-right {
+  animation: techMarqueeRight 70s linear infinite;
 }
 
 .tech-marquee-wrapper:hover .tech-marquee-track {
   animation-play-state: paused;
 }
 
-@keyframes techMarquee {
+@keyframes techMarqueeLeft {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-[dir="rtl"] .tech-marquee-track {
-  animation: techMarqueeRtl 75s linear infinite;
+@keyframes techMarqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-@keyframes techMarqueeRtl {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(50%); }
+[dir="rtl"] .marquee-track-left {
+  animation: techMarqueeRight 70s linear infinite;
+}
+
+[dir="rtl"] .marquee-track-right {
+  animation: techMarqueeLeft 70s linear infinite;
 }
 
 .tech-card-pill {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
-  padding: 16px 24px;
-  min-width: 240px;
+  padding: 18px 24px;
+  min-width: 260px;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .tech-card-pill:hover {
@@ -132,12 +148,28 @@
   transform: translateY(-2px);
 }
 
+.tech-pill-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.tech-pill-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(0, 119, 182, 0.05);
+  flex-shrink: 0;
+}
+
 .tech-pill-name {
-  display: block;
   font-size: 1rem;
   font-weight: 700;
   color: #0f172a;
-  margin-bottom: 4px;
 }
 
 .tech-pill-desc {
@@ -148,7 +180,26 @@
 }
 
 @media (max-width: 768px) {
+  .supported-tech-section {
+    padding: 70px 0;
+  }
   .supported-tech-title {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .supported-tech-container {
+    padding: 0 16px;
+  }
+  .supported-tech-header {
+    margin-bottom: 32px;
+  }
+  .supported-tech-title {
+    font-size: 1.85rem;
+  }
+  .tech-tab-btn {
+    padding: 8px 14px;
+    font-size: 0.78rem;
   }
 }

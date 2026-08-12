@@ -231,6 +231,13 @@
 @media (max-width: 960px) {
   .navbar {
     padding: 0 20px;
+    height: 80px;
+  }
+  .nav-menu-mobile {
+    top: 80px;
+  }
+  .nav-menu-mobile.open {
+    height: calc(100vh - 80px);
   }
   .nav-links-desktop,
   .nav-cta-desktop {
@@ -239,5 +246,25 @@
   .nav-mobile-right,
   .nav-toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 14px;
+    height: 75px;
+  }
+  .nav-menu-mobile {
+    top: 75px;
+  }
+  .nav-menu-mobile.open {
+    height: calc(100vh - 75px);
+  }
+  .nav-mobile-right {
+    gap: 6px;
+  }
+  .lang-switcher-pill.mobile .lang-option {
+    padding: 2px 6px;
+    font-size: 0.72rem;
   }
 }

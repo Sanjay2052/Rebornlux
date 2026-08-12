@@ -376,10 +376,40 @@
 }
 
 @media (max-width: 900px) {
+  .success-stories-section {
+    padding: 60px 0;
+  }
   .stories-grid {
     grid-template-columns: 1fr;
   }
   .success-stories-title {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .success-stories-container {
+    padding: 0 16px;
+  }
+  .success-stories-title {
+    font-size: 1.85rem;
+  }
+  .story-card {
+    padding: 20px 18px;
+    border-radius: 16px;
+  }
+  .story-modal-overlay {
+    padding: 12px;
+  }
+  .story-modal-card {
+    padding: 24px 18px;
+  }
+  .modal-actions-row {
+    flex-direction: column;
+  }
+  .modal-cta-primary,
+  .modal-btn-close {
+    width: 100%;
+    justify-content: center;
   }
 }

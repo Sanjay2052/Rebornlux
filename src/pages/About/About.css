@@ -157,6 +157,9 @@
 }
 
 @media (max-width: 900px) {
+  .about-section {
+    padding: 70px 0;
+  }
   .about-narrative-grid {
     grid-template-columns: 1fr;
   }
@@ -168,7 +171,22 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 480px) {
+  .about-container {
+    padding: 0 16px;
+  }
+  .about-header {
+    margin-bottom: 32px;
+  }
+  .about-title {
+    font-size: 1.85rem;
+  }
+  .about-text-card {
+    padding: 20px 16px;
+  }
+  .stat-box {
+    padding: 16px;
+  }
   .pillars-grid {
     grid-template-columns: 1fr;
   }

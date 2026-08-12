@@ -48,7 +48,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
 }
 
@@ -351,10 +351,43 @@
 }
 
 @media (max-width: 768px) {
+  .services-section {
+    padding: 70px 0;
+  }
   .services-grid {
     grid-template-columns: 1fr;
   }
   .services-title {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container {
+    padding: 0 16px;
+  }
+  .services-header {
+    margin-bottom: 36px;
+  }
+  .services-title {
+    font-size: 1.85rem;
+  }
+  .service-card {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+  .service-modal-overlay {
+    padding: 12px;
+  }
+  .service-modal-content {
+    padding: 24px 18px;
+  }
+  .modal-actions {
+    flex-direction: column;
+  }
+  .modal-cta-btn,
+  .modal-cancel-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
