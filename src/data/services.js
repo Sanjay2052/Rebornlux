@@ -6,7 +6,6 @@ import {
   Palette,
   Cpu,
   Cloud,
-  Zap,
   Users,
   Wrench
 } from 'lucide-react';
@@ -25,7 +24,7 @@ export const SERVICES = [
     titleKey: 'services.items.mobile.title',
     descKey: 'services.items.mobile.desc',
     icon: Smartphone,
-    techStack: ['Flutter', 'React Native', 'Swift', 'Kotlin'],
+    techStack: ['Flutter', 'Dart'],
     features: ['Cross-platform Apps', 'Native Performance', 'Offline Data Sync']
   },
   {
@@ -33,7 +32,7 @@ export const SERVICES = [
     titleKey: 'services.items.customSoftware.title',
     descKey: 'services.items.customSoftware.desc',
     icon: Code2,
-    techStack: ['Python', 'Node.js', 'PostgreSQL', 'Java'],
+    techStack: ['Python', 'Node.js', 'PostgreSQL'],
     features: ['Enterprise Business Logic', 'Microservices', 'Custom Internal Tools']
   },
   {
@@ -41,7 +40,7 @@ export const SERVICES = [
     titleKey: 'services.items.ecommerce.title',
     descKey: 'services.items.ecommerce.desc',
     icon: ShoppingBag,
-    techStack: ['Next.js', 'Node.js', 'Stripe', 'MongoDB'],
+    techStack: ['Next.js', 'Node.js', 'MongoDB'],
     features: ['Multi-Vendor Storefronts', 'Payment Gateways', 'Inventory Ledgers']
   },
   {
@@ -57,7 +56,7 @@ export const SERVICES = [
     titleKey: 'services.items.api.title',
     descKey: 'services.items.api.desc',
     icon: Cpu,
-    techStack: ['GraphQL', 'RESTful', 'gRPC', 'Express.js'],
+    techStack: ['GraphQL', 'RESTful', 'Express.js'],
     features: ['High-throughput Gateways', 'Secure Auth (OAuth2/JWT)', 'Sub-50ms Response']
   },
   {
@@ -65,23 +64,15 @@ export const SERVICES = [
     titleKey: 'services.items.cloud.title',
     descKey: 'services.items.cloud.desc',
     icon: Cloud,
-    techStack: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'Terraform'],
+    techStack: ['AWS', 'Docker', 'Nginx'],
     features: ['Container Orchestration', 'Automated CI/CD', 'Auto-scaling Clusters']
-  },
-  {
-    id: 'automation',
-    titleKey: 'services.items.automation.title',
-    descKey: 'services.items.automation.desc',
-    icon: Zap,
-    techStack: ['Python', 'Camunda', 'RPA', 'Zapier/n8n'],
-    features: ['Workflow Automation', 'ETL Data Pipelines', 'Process Optimization']
   },
   {
     id: 'dedicated',
     titleKey: 'services.items.dedicated.title',
     descKey: 'services.items.dedicated.desc',
     icon: Users,
-    techStack: ['Full-stack Developers', 'Mobile Leads', 'DevOps Engineers'],
+    techStack: ['Full-stack Developers', 'Mobile Leads'],
     features: ['Agile Team Extension', 'Direct Communication', 'Dedicated Project Managers']
   },
   {
@@ -89,7 +80,7 @@ export const SERVICES = [
     titleKey: 'services.items.maintenance.title',
     descKey: 'services.items.maintenance.desc',
     icon: Wrench,
-    techStack: ['Prometheus', 'Grafana', 'Sentry', 'CloudWatch'],
+    techStack: ['24/7 Monitoring', 'Security Patches', 'SLA Support'],
     features: ['24/7 Server Monitoring', 'Security Hotfixes', 'Guaranteed Uptime SLA']
   }
 ];
