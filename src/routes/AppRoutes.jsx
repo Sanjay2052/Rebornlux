@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
+import { LanguageProvider } from '../context/LanguageContext';
 import Navbar from '../layouts/Navbar/Navbar';
 import Footer from '../layouts/Footer/Footer';
 import Hero from '../widgets/Hero/Hero';
+import Solutions from '../pages/Solutions/Solutions';
 import Services from '../pages/Services/Services';
-import Stats from '../widgets/Stats/Stats';
+import Industries from '../pages/Industries/Industries';
+import SupportedTech from '../widgets/SupportedTech/SupportedTech';
+import SuccessStories from '../widgets/SuccessStories/SuccessStories';
+import PowerUpCTA from '../widgets/PowerUpCTA/PowerUpCTA';
 import About from '../pages/About/About';
-import TechStack from '../widgets/TechStack/TechStack';
 import Contact from '../pages/Contact/Contact';
 
 export default function AppRoutes() {
@@ -31,17 +35,20 @@ export default function AppRoutes() {
   }, []);
 
   return (
-    <>
+    <LanguageProvider>
       <Navbar />
       <main>
         <Hero />
+        <Solutions />
         <Services />
-        <Stats />
+        <Industries />
+        <SupportedTech />
+        <SuccessStories />
         <About />
-        <TechStack />
+        <PowerUpCTA />
         <Contact />
       </main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }

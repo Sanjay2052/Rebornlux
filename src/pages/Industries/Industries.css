@@ -1,0 +1,111 @@
+.industries-section {
+  padding: 100px 0;
+  background: #ffffff;
+  position: relative;
+}
+
+.industries-container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.industries-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.industries-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(0, 119, 182, 0.08);
+  padding: 6px 14px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+}
+
+.industries-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  font-family: var(--font-heading);
+}
+
+.industries-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.industry-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.industry-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue-sky);
+  background: #ffffff;
+  box-shadow: 0 16px 36px rgba(0, 119, 182, 0.12);
+}
+
+.ind-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(0, 119, 182, 0.08);
+  color: var(--blue-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.industry-card:hover .ind-icon-box {
+  background: var(--blue-primary);
+  color: #ffffff;
+}
+
+.ind-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-family: var(--font-heading);
+}
+
+.ind-card-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+  .industries-title {
+    font-size: 2.2rem;
+  }
+}

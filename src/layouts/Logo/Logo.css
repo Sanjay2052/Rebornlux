@@ -1,0 +1,43 @@
+.rebornlux-logo-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  line-height: 1;
+}
+
+.rebornlux-logo-wrapper:hover {
+  transform: translateY(-1px);
+}
+
+.rebornlux-logo-img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Light Theme (Navbar, Light backgrounds) */
+.rebornlux-logo-wrapper.theme-light .rebornlux-logo-img {
+  mix-blend-mode: multiply;
+  filter: contrast(1.04);
+}
+
+/* Dark Theme (Footer, Dark sections) */
+.rebornlux-logo-wrapper.theme-dark {
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.rebornlux-logo-wrapper.theme-dark .rebornlux-logo-img {
+  mix-blend-mode: normal;
+}
+
+/* Transparent Theme (Unmodified raw logo rendering) */
+.rebornlux-logo-wrapper.theme-transparent .rebornlux-logo-img {
+  mix-blend-mode: normal;
+}

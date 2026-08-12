@@ -1,50 +1,83 @@
 import React from 'react';
-import { INDUSTRIES, WHY_CHOOSE_US } from '../../data/about';
+import { useLanguage } from '../../context/LanguageContext';
+import { ShieldCheck, Cpu, Layers, RefreshCw, Headphones } from 'lucide-react';
 import './About.css';
 
 export default function About() {
+  const { t } = useLanguage();
+
+  const pillars = [
+    {
+      title: t('about.pillars.engineering'),
+      desc: t('about.pillars.engineeringDesc'),
+      icon: Cpu
+    },
+    {
+      title: t('about.pillars.scalable'),
+      desc: t('about.pillars.scalableDesc'),
+      icon: Layers
+    },
+    {
+      title: t('about.pillars.agile'),
+      desc: t('about.pillars.agileDesc'),
+      icon: RefreshCw
+    },
+    {
+      title: t('about.pillars.support'),
+      desc: t('about.pillars.supportDesc'),
+      icon: Headphones
+    }
+  ];
+
   return (
-    <>
-      {/* --- Why Choose Us Section --- */}
-      <section id="why-choose-us" className="why-section">
-        <div className="section-header">
-          <span className="badge">Our Standards</span>
-          <h2>Why Choose Rebornlux</h2>
-          <p className="subtitle">We combine experienced design practices with mathematical code logic to build safer, faster software.</p>
+    <section id="about" className="about-section">
+      <div className="about-container">
+        <div className="about-header">
+          <span className="about-badge">{t('about.badge')}</span>
+          <h2 className="about-title">{t('about.title')}</h2>
+          <p className="about-subtitle">{t('about.subtitle')}</p>
         </div>
 
-        <div className="why-grid">
-          {WHY_CHOOSE_US.map((item) => (
-            <div key={item.name} className="why-card glass-card">
-              <h3>{item.name}</h3>
-              <p>{item.desc}</p>
+        {/* Narrative Split View */}
+        <div className="about-narrative-grid">
+          <div className="about-text-card">
+            <h3>{t('about.narrativeTitle')}</h3>
+            <p>{t('about.p1')}</p>
+            <p>{t('about.p2')}</p>
+          </div>
+
+          <div className="about-stats-card">
+            <div className="stat-box">
+              <span className="stat-number">+100</span>
+              <span className="stat-label">{t('about.stats.deliveries')}</span>
             </div>
-          ))}
+            <div className="stat-box">
+              <span className="stat-number">99.9%</span>
+              <span className="stat-label">{t('about.stats.uptime')}</span>
+            </div>
+            <div className="stat-box">
+              <span className="stat-number">24/7</span>
+              <span className="stat-label">{t('about.stats.monitoring')}</span>
+            </div>
+          </div>
         </div>
-      </section>
 
-      {/* --- Industries Section --- */}
-      <section id="industries" className="industries-section">
-        <div className="section-header">
-          <span className="badge">Market Reach</span>
-          <h2>Industries We Serve</h2>
-          <p className="subtitle">We deploy custom-tailored software systems that solve operational problems across multiple sectors.</p>
-        </div>
-
-        <div className="industries-grid">
-          {INDUSTRIES.map((ind) => {
-            const Icon = ind.icon;
+        {/* 4 Pillars Grid */}
+        <div className="pillars-grid">
+          {pillars.map((pillar, idx) => {
+            const Icon = pillar.icon;
             return (
-              <div key={ind.name} className="industry-card glass-card">
-                <div className="industry-icon-box">
-                  <Icon size={22} />
+              <div key={idx} className="pillar-card">
+                <div className="pillar-icon-box">
+                  <Icon size={24} className="pillar-icon" />
                 </div>
-                <h3>{ind.name}</h3>
+                <h4 className="pillar-title">{pillar.title}</h4>
+                <p className="pillar-desc">{pillar.desc}</p>
               </div>
             );
           })}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

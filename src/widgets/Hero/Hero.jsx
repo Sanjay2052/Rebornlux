@@ -1,12 +1,88 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
+import { ArrowRight, ChevronDown, Sparkles, Code2, Cpu, Cloud, Database, Layers } from 'lucide-react';
 import './Hero.css';
 
 export default function Hero() {
+  const { t } = useLanguage();
+  const canvasRef = useRef(null);
+
+  // Animated Technology Particle Mesh Canvas
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+
+    const resizeCanvas = () => {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Particle nodes
+    const particleCount = 50;
+    const particles = [];
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2 + 1
+      });
+    }
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw particle mesh connections
+      for (let i = 0; i < particleCount; i++) {
+        const p1 = particles[i];
+        p1.x += p1.vx;
+        p1.y += p1.vy;
+
+        if (p1.x < 0 || p1.x > canvas.width) p1.vx *= -1;
+        if (p1.y < 0 || p1.y > canvas.height) p1.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 210, 254, 0.5)';
+        ctx.fill();
+
+        for (let j = i + 1; j < particleCount; j++) {
+          const p2 = particles[j];
+          const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(0, 119, 182, ${0.18 * (1 - dist / 130)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(draw);
+    };
+
+    draw();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
   const handleScrollClick = (e, targetId) => {
     e.preventDefault();
     const element = document.querySelector(targetId);
     if (element) {
-      const offset = 80;
+      const offset = 90;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -21,83 +97,102 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero-section">
-      <div className="hero-grid">
-        {/* Left: Headline, Description and Call to Action */}
+      <canvas ref={canvasRef} className="hero-particle-canvas" />
+
+      <div className="hero-container">
+        {/* Left Column: Premium Text Messaging */}
         <div className="hero-content">
+          <div className="hero-badge">
+            <Sparkles size={16} className="hero-badge-icon" />
+            <span>{t('hero.badgeVerified')}</span>
+          </div>
+
           <h1 className="hero-title">
-            Web and Mobile App Development Company in Alapuzha, Kerala, India
+            {t('hero.titleMain')}<br />
+            <span className="hero-gradient-text">{t('hero.titleHighlight')}</span>
           </h1>
+
           <p className="hero-desc">
-            Rebornlux designs and develops mobile and web apps keeping in mind both user convenience and business growth. We work with individuals and organizations to create products and market them to their target audience.
+            {t('hero.subtitle')}
           </p>
-          
+
           <div className="hero-actions">
             <a
               href="#contact"
               onClick={(e) => handleScrollClick(e, '#contact')}
-              className="btn-hero-quote"
+              className="btn-hero-primary"
             >
-              GET FREE QUOTE
+              <span>{t('hero.primaryCta')}</span>
+              <ArrowRight size={18} className="hero-btn-icon" />
+            </a>
+
+            <a
+              href="#solutions"
+              onClick={(e) => handleScrollClick(e, '#solutions')}
+              className="btn-hero-secondary"
+            >
+              <span>{t('hero.secondaryCta')}</span>
             </a>
           </div>
-        </div>
 
-        {/* Right: Trust Badges Grid */}
-        <div className="hero-badges-container">
-          <div className="badges-grid">
-            {/* Badge 1: Top App Developers */}
-            <div className="badge-item orange">
-              <span className="badge-top">TOP APP</span>
-              <span className="badge-mid">DEVELOPMENT</span>
-              <span className="badge-bot">COMPANY</span>
+          {/* Core Feature Highlights */}
+          <div className="hero-pillars">
+            <div className="pillar-item">
+              <Code2 size={16} className="pillar-icon" />
+              <span>{t('hero.pillars.engineering')}</span>
             </div>
-
-            {/* Badge 2: Clutch */}
-            <div className="badge-item clutch">
-              <span className="clutch-title">Clutch</span>
-              <span className="stars">★★★★★</span>
-              <span className="badge-bot">TOP DEVELOPER</span>
+            <div className="pillar-divider">•</div>
+            <div className="pillar-item">
+              <Cloud size={16} className="pillar-icon" />
+              <span>{t('hero.pillars.cloud')}</span>
             </div>
-
-            {/* Badge 3: Top Mobile App Development Agencies */}
-            <div className="badge-item red">
-              <span className="badge-top">TOP MOBILE APP</span>
-              <span className="badge-mid">DEVELOPMENT</span>
-              <span className="badge-bot">AGENCY</span>
-            </div>
-
-            {/* Badge 4: Kerala Startup Mission */}
-            <div className="badge-item ksum">
-              <div className="ksum-logo">
-                <span className="ksum-k">K</span>
-                <span className="ksum-s">S</span>
-                <span className="ksum-u">U</span>
-                <span className="ksum-m">M</span>
-              </div>
-              <span className="badge-bot">KERALA STARTUP MISSION</span>
-            </div>
-
-            {/* Badge 5: Clutch Web Developers */}
-            <div className="badge-item clutch-blue">
-              <span className="clutch-title">Clutch</span>
-              <span className="stars">★★★★★</span>
-              <span className="badge-bot">WEB DEVELOPERS 2026</span>
-            </div>
-
-            {/* Badge 6: Sortlist */}
-            <div className="badge-item sortlist">
-              <span className="sortlist-title">sortlist</span>
-              <span className="stars">★★★★★</span>
-              <span className="badge-bot">VERIFIED PARTNER</span>
-            </div>
-
-            {/* Badge 7: Bark */}
-            <div className="badge-item bark">
-              <span className="bark-title">bark</span>
-              <span className="badge-bot">EXCELLENT</span>
+            <div className="pillar-divider">•</div>
+            <div className="pillar-item">
+              <Cpu size={16} className="pillar-icon" />
+              <span>{t('hero.pillars.ai')}</span>
             </div>
           </div>
         </div>
+
+        {/* Right Column: Abstract 3D Digital / AI Technology Graphic with Floating Tech Labels */}
+        <div className="hero-visual-col">
+          <div className="tech-3d-visual">
+            <div className="glowing-core"></div>
+            <div className="orbital-ring ring-1"></div>
+            <div className="orbital-ring ring-2"></div>
+            <div className="orbital-ring ring-3"></div>
+
+            {/* Small Floating Technology Labels */}
+            <div className="floating-tech-pill pill-react">
+              <Code2 size={14} />
+              <span>React</span>
+            </div>
+            <div className="floating-tech-pill pill-node">
+              <Layers size={14} />
+              <span>Node.js</span>
+            </div>
+            <div className="floating-tech-pill pill-mongo">
+              <Database size={14} />
+              <span>MongoDB</span>
+            </div>
+            <div className="floating-tech-pill pill-cloud">
+              <Cloud size={14} />
+              <span>Cloud</span>
+            </div>
+            <div className="floating-tech-pill pill-ai">
+              <Cpu size={14} />
+              <span>AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Subtle "Scroll to explore ↓" indicator */}
+      <div className="hero-scroll-indicator">
+        <a href="#solutions" onClick={(e) => handleScrollClick(e, '#solutions')} aria-label="Scroll to explore">
+          <span className="scroll-text">{t('hero.scrollIndicator')}</span>
+          <ChevronDown size={20} className="bounce-arrow" />
+        </a>
       </div>
     </section>
   );

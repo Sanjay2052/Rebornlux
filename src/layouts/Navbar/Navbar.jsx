@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Logo from '../Logo/Logo';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Globe } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 import './Navbar.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +22,13 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Services', href: '#services' },
-    { name: 'Blog', href: '#why-choose-us' },
-    { name: 'Dedicated Developers', href: '#techstack' },
-    { name: 'Careers', href: '#contact' }
+    { name: t('nav.home'), href: '#hero' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.solutions'), href: '#solutions' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.industries'), href: '#industries' },
+    { name: t('nav.successStories'), href: '#success-stories' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   const handleLinkClick = (e, href) => {
@@ -32,7 +36,7 @@ export default function Navbar() {
     setIsOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      const offset = 80;
+      const offset = 90;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -48,15 +52,15 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <a href="#hero" onClick={(e) => handleLinkClick(e, '#hero')} className="nav-brand">
-          <Logo size={32} />
+        <a href="#hero" onClick={(e) => handleLinkClick(e, '#hero')} className="nav-brand" aria-label="Rebornlux Digital Home">
+          <Logo size={85} theme="light" />
         </a>
 
         {/* Desktop Links */}
         <div className="nav-links-desktop">
-          {navLinks.map((link) => (
+          {navLinks.map((link, idx) => (
             <a
-              key={link.name}
+              key={idx}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
               className="nav-link"
@@ -66,33 +70,70 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* Action Group: Language Switcher + Contact CTA */}
         <div className="nav-cta-desktop">
+          <div className="lang-switcher-pill">
+            <Globe size={14} className="lang-globe-icon" />
+            <button 
+              className={`lang-option ${language === 'en' ? 'active' : ''}`}
+              onClick={() => setLanguage('en')}
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+            <span className="lang-divider">|</span>
+            <button 
+              className={`lang-option ${language === 'ar' ? 'active' : ''}`}
+              onClick={() => setLanguage('ar')}
+              aria-label="Switch to Arabic"
+            >
+              العربية
+            </button>
+          </div>
+
           <a
             href="#contact"
             onClick={(e) => handleLinkClick(e, '#contact')}
             className="nav-btn-primary"
           >
-            <span>CONTACT</span>
+            <span>{t('nav.getStarted')}</span>
           </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="nav-toggle"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Action Group */}
+        <div className="nav-mobile-right">
+          <div className="lang-switcher-pill mobile">
+            <button 
+              className={`lang-option ${language === 'en' ? 'active' : ''}`}
+              onClick={() => setLanguage('en')}
+            >
+              EN
+            </button>
+            <span className="lang-divider">|</span>
+            <button 
+              className={`lang-option ${language === 'ar' ? 'active' : ''}`}
+              onClick={() => setLanguage('ar')}
+            >
+              عربي
+            </button>
+          </div>
+          
+          <button
+            className="nav-toggle"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Drawer Menu */}
       <div className={`nav-menu-mobile ${isOpen ? 'open' : ''}`}>
         <div className="nav-links-mobile">
-          {navLinks.map((link) => (
+          {navLinks.map((link, idx) => (
             <a
-              key={link.name}
+              key={idx}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
               className="nav-link-mobile"
@@ -105,8 +146,8 @@ export default function Navbar() {
             onClick={(e) => handleLinkClick(e, '#contact')}
             className="nav-btn-primary-mobile"
           >
-            <span>Get Free Consultation</span>
-            <ArrowRight size={16} />
+            <span>{t('nav.getStarted')}</span>
+            <ArrowRight size={16} className="btn-arrow-icon" />
           </a>
         </div>
       </div>

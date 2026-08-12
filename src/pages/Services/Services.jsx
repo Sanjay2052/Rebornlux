@@ -1,13 +1,40 @@
-import React from 'react';
-import { Smartphone, Cpu, Palette, Monitor } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { SERVICES } from '../../data/services';
+import { useLanguage } from '../../context/LanguageContext';
+import { ArrowRight, X, Check } from 'lucide-react';
 import './Services.css';
 
 export default function Services() {
-  const handleScrollClick = (e, targetId) => {
+  const { t } = useLanguage();
+  const [selectedService, setSelectedService] = useState(null);
+
+  // Prevent background page scrolling when modal is open
+  useEffect(() => {
+    if (selectedService) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedService]);
+
+  const handleOpenModal = (service) => {
+    setSelectedService(service);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedService(null);
+  };
+
+  const handleScrollToContact = (e) => {
     e.preventDefault();
-    const element = document.querySelector(targetId);
+    handleCloseModal();
+    const element = document.querySelector('#contact');
     if (element) {
-      const offset = 80;
+      const offset = 90;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -20,80 +47,101 @@ export default function Services() {
     }
   };
 
-  const servicesList = [
-    {
-      id: 'flutter',
-      title: 'Flutter App Development',
-      desc: 'Build apps in Flutter for both Android and iOS.',
-      icon: Smartphone,
-      isHighlighted: false
-    },
-    {
-      id: 'native',
-      title: 'Native App Development',
-      desc: 'Create efficient and powerful apps with high-value for users.',
-      icon: Cpu,
-      isHighlighted: true
-    },
-    {
-      id: 'design',
-      title: 'Design and User Experience',
-      desc: 'Design clean and intuitive products according to the user\'s needs.',
-      icon: Palette,
-      isHighlighted: false
-    },
-    {
-      id: 'maintenance',
-      title: 'Maintenance and Monitoring',
-      desc: 'Dynamic servers and 24 x 7 support ensures you never face a snag.',
-      icon: Monitor,
-      isHighlighted: false
-    }
-  ];
-
   return (
-    <section id="services" className="services-section-wrapper">
+    <section id="services" className="services-section">
       <div className="services-container">
-        {/* Left: Section Header Text and Action Button */}
-        <div className="services-left">
-          <h2 className="services-heading">
-            Website and Mobile App Development
-          </h2>
-          <p className="services-paragraph">
-            Build the right brand with Rebornlux Technologies to deliver high-value products to users.
-            With our experience marketing mass consumer products, we help you build your dream product
-            at the lowest cost with the quickest market release.
-          </p>
-          <a
-            href="#portfolio"
-            onClick={(e) => handleScrollClick(e, '#portfolio')}
-            className="btn-services-outline"
-          >
-            SERVICES
-          </a>
+        <div className="services-header">
+          <span className="services-badge">{t('services.badge')}</span>
+          <h2 className="services-title">{t('services.heading')}</h2>
+          <p className="services-subtitle">{t('services.paragraph')}</p>
         </div>
 
-        {/* Right: Overlapping 2x2 Services Grid */}
-        <div className="services-right">
-          <div className="services-cards-grid">
-            {servicesList.map((service) => {
-              const Icon = service.icon;
-              return (
-                <div
-                  key={service.id}
-                  className={`service-grid-card ${service.isHighlighted ? 'highlighted' : ''}`}
-                >
-                  <div className="service-card-icon-container">
-                    <Icon size={26} className="service-card-icon" />
-                  </div>
-                  <h3 className="service-card-title">{service.title}</h3>
-                  <p className="service-card-desc">{service.desc}</p>
+        {/* 10 Services Grid */}
+        <div className="services-grid">
+          {SERVICES.map((service) => {
+            const Icon = service.icon;
+            return (
+              <div key={service.id} className="service-card">
+                <div className="service-icon-box">
+                  <Icon size={26} className="service-icon" />
                 </div>
-              );
-            })}
-          </div>
+                
+                <h3 className="service-card-title">{t(service.titleKey)}</h3>
+                <p className="service-card-desc">{t(service.descKey)}</p>
+
+                <div className="service-tech-tags">
+                  {service.techStack.slice(0, 3).map((tech, idx) => (
+                    <span key={idx} className="tech-tag-badge">{tech}</span>
+                  ))}
+                </div>
+
+                <button
+                  className="service-learn-btn"
+                  onClick={() => handleOpenModal(service)}
+                >
+                  <span>{t('services.learnMore')}</span>
+                  <ArrowRight size={14} className="btn-arrow" />
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
+
+      {/* Service Detail Modal using React Portal to escape transformed section container */}
+      {selectedService && createPortal(
+        <div className="service-modal-overlay" onClick={handleCloseModal}>
+          <div className="service-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={handleCloseModal} aria-label="Close modal">
+              <X size={20} />
+            </button>
+
+            <div className="modal-header">
+              <div className="modal-icon-box">
+                {React.createElement(selectedService.icon, { size: 28, className: 'modal-icon' })}
+              </div>
+              <div>
+                <h3 className="modal-title">{t(selectedService.titleKey)}</h3>
+                <span className="modal-category">ENGINEERING SPECIFICATION</span>
+              </div>
+            </div>
+
+            <p className="modal-desc">{t(selectedService.descKey)}</p>
+
+            <div className="modal-section">
+              <h4>Key Deliverables & Features</h4>
+              <ul className="modal-features-list">
+                {selectedService.features.map((feat, idx) => (
+                  <li key={idx}>
+                    <Check size={16} className="feature-check-icon" />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="modal-section">
+              <h4>Core Technology Stack</h4>
+              <div className="modal-tech-pills">
+                {selectedService.techStack.map((tech, idx) => (
+                  <span key={idx} className="modal-tech-pill">{tech}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="modal-actions">
+              <a href="#contact" onClick={handleScrollToContact} className="modal-cta-btn">
+                <span>Request Project Spec</span>
+                <ArrowRight size={16} />
+              </a>
+              <button className="modal-cancel-btn" onClick={handleCloseModal}>
+                {t('services.closeModal')}
+              </button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </section>
   );
 }
