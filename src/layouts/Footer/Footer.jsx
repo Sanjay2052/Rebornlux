@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="footer-top-grid">
           {/* Brand Column */}
           <div className="footer-col brand-col">
-            <Logo size={85} theme="dark" />
+            <Logo size={50} theme="dark" />
             <p className="footer-tagline">
               {t('footer.tagline')}
             </p>

@@ -53,7 +53,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <a href="#hero" onClick={(e) => handleLinkClick(e, '#hero')} className="nav-brand" aria-label="Rebornlux Digital Home">
-          <Logo size={85} theme="light" />
+          <Logo size={48} theme="light" />
         </a>
 
         {/* Desktop Links */}

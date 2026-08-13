@@ -41,3 +41,9 @@
 .rebornlux-logo-wrapper.theme-transparent .rebornlux-logo-img {
   mix-blend-mode: normal;
 }
+
+@media (max-width: 600px) {
+  .rebornlux-logo-img {
+    max-height: 40px !important;
+  }
+}

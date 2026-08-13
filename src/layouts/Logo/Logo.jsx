@@ -17,8 +17,8 @@ import './Logo.css';
 export default function Logo({ 
   src,
   className = '', 
-  size = 85, 
-  maxWidth = 280,
+  size = 50, 
+  maxWidth = 220,
   theme = 'light',
   alt = 'REBORNLUX Logo' 
 }) {
