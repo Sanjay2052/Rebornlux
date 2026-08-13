@@ -8,7 +8,7 @@ export const translations = {
       industries: 'Industries',
       successStories: 'Success Stories',
       contact: 'Contact',
-      getStarted: 'Get Started',
+      getStarted: 'Book The Call',
       langToggle: 'العربية'
     },
     hero: {
@@ -336,7 +336,7 @@ export const translations = {
       industries: 'القطاعات',
       successStories: 'قصص النجاح',
       contact: 'اتصل بنا',
-      getStarted: 'ابدأ الآن',
+      getStarted: 'احجز المكالمة',
       langToggle: 'English'
     },
     hero: {
