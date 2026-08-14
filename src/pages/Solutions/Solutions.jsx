@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { Code2, Cloud, Terminal, Cpu } from 'lucide-react';
+import { Code2, Cloud, Terminal } from 'lucide-react';
 import './Solutions.css';
 
 export default function Solutions() {
@@ -21,11 +21,6 @@ export default function Solutions() {
       title: t('solutions.posArchitectures'),
       desc: t('solutions.posDesc'),
       icon: <Terminal className="sol-icon" />
-    },
-    {
-      title: t('solutions.aiIntegration'),
-      desc: t('solutions.aiDesc'),
-      icon: <Cpu className="sol-icon" />
     }
   ];
 

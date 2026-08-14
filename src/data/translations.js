@@ -65,8 +65,7 @@ export const translations = {
         pythonDesc: 'Versatile programming language for APIs, automation, AI, and data systems.',
         djangoDesc: 'Secure and scalable Python web framework.',
         fastapiDesc: 'High-performance framework for modern API development.',
-        flutterDesc: 'Cross-platform UI toolkit powered by Dart for mobile, web, and desktop applications.',
-        dartDesc: 'Modern programming language optimized for building fast, cross-platform applications.',
+        flutterDesc: 'Cross-platform UI toolkit for mobile, web, and desktop applications.',
         postgresDesc: 'Advanced open-source relational database.',
         mongoDesc: 'Flexible and scalable NoSQL document database.',
         mysqlDesc: 'Reliable relational database for business applications.',
@@ -139,9 +138,7 @@ export const translations = {
       cloudModernization: 'Multi-Cloud Infrastructure',
       cloudDesc: 'Resilient cloud deployment patterns with automated failover, load balancing, and edge caching.',
       posArchitectures: 'Enterprise POS & Inventory Systems',
-      posDesc: 'Custom Point-of-Sale networks designed for multi-branch retail, food services, and workforce operations.',
-      aiIntegration: 'AI & Data Engineering Pipelines',
-      aiDesc: 'Predictive analytics, automated LLM workflows, and real-time streaming telemetry for operational intelligence.'
+      posDesc: 'Custom Point-of-Sale networks designed for multi-branch retail, food services, and workforce operations.'
     },
     industries: {
       badge: 'TARGET DOMAINS',
@@ -155,11 +152,7 @@ export const translations = {
         logistics: 'Logistics & Transportation',
         travel: 'Travel & Hospitality',
         realestate: 'Real Estate & Property',
-        manufacturing: 'Manufacturing & Smart Industry',
-        professional: 'Professional Services',
-        startups: 'Startups & SMEs',
-        media: 'Media & Entertainment',
-        government: 'Government & Public Services'
+        manufacturing: 'Manufacturing & Smart Industry'
       },
       descs: {
         ecommerceDesc: 'Multi-vendor marketplaces, retail POS systems, real-time inventory ledger sync, and automated payment gateways.',
@@ -169,11 +162,7 @@ export const translations = {
         logisticsDesc: 'Real-time GPS fleet tracking, cross-border workforce dispatch, automated warehouse inventory, and route optimization.',
         travelDesc: 'Hotel reservation booking engines, itinerary management, flight ticket APIs, and multi-currency billing.',
         realestateDesc: 'Property listing portals, tenant management tools, lease agreement automation, and virtual tour integrations.',
-        manufacturingDesc: 'Industrial IoT telemetry dashboards, supply chain inventory, machinery maintenance tracking, and ERP integration.',
-        professionalDesc: 'Corporate client portals, time-tracking software, legal document automation, and consultancy management dashboards.',
-        startupsDesc: 'Rapid MVP prototyping, scalable cloud architecture, SaaS development, and technical co-founding engineering.',
-        mediaDesc: 'Digital asset management (DAM), video streaming infrastructure, content delivery networks, and publishing CMS.',
-        governmentDesc: 'Public sector citizen portals, pension processing infrastructure, identity verification, and municipal administration.'
+        manufacturingDesc: 'Industrial IoT telemetry dashboards, supply chain inventory, machinery maintenance tracking, and ERP integration.'
       }
     },
     ourPortfolio: {
@@ -456,8 +445,7 @@ export const translations = {
         pythonDesc: 'لغة متعددة الاستخدامات للواجهات البرمجية، الأتمتة، والذكاء الاصطناعي.',
         djangoDesc: 'إطار عمل بايثون الآمن والقابل للتوسع.',
         fastapiDesc: 'إطار عمل فائق السرعة لتطوير واجهات البرمجة الحديثة.',
-        flutterDesc: 'مجموعة أدوات واجهات متعددة المنصات مدعومة بلغة Dart.',
-        dartDesc: 'لغة برمجة حديثة محسنة لبناء التطبيقات السريعة العابرة للمنصات.',
+        flutterDesc: 'مجموعة أدوات واجهات متعددة المنصات للهواتف والويب وسطح المكتب.',
         postgresDesc: 'قاعدة بيانات علائقية متتقدمة ومفتوحة المصدر.',
         mongoDesc: 'قاعدة بيانات المستندات المرنة والقابلة للتوسع.',
         mysqlDesc: 'قاعدة بيانات علائقية موثوقة لتطبيقات الأعمال.',
@@ -530,9 +518,7 @@ export const translations = {
       cloudModernization: 'بنية تحتية متعددة السحب',
       cloudDesc: 'نماذج نشر سحابية مرنة مع التوزيع التلقائي للأحمال والتخزين المؤقت.',
       posArchitectures: 'أنظمة نقاط البيع والمخزون للمؤسسات',
-      posDesc: 'شبكات نقاط بيع مخصصة لتجارة التجزئة متعددة الفروع والمطاعم وإدارة العمالة.',
-      aiIntegration: 'أنابيب الذكاء الاصطناعي وهندسة البيانات',
-      aiDesc: 'تحليلات تنبؤية، سير عمل النماذج اللغوية، وبث البيانات المباشر للذكاء التشغيلي.'
+      posDesc: 'شبكات نقاط بيع مخصصة لتجارة التجزئة متعددة الفروع والمطاعم وإدارة العمالة.'
     },
     industries: {
       badge: 'القطاعات المستهدفة',
@@ -546,11 +532,7 @@ export const translations = {
         logistics: 'اللوجستيات والنقل',
         travel: 'السفر والضيافة',
         realestate: 'العقارات وإدارة الممتلكات',
-        manufacturing: 'التصنيع والصناعة الذكية',
-        professional: 'الخدمات المهنية والاستشارات',
-        startups: 'الشركات الناشئة والمتوسطة',
-        media: 'الإعلام والترفيه',
-        government: 'القطاع الحكومي والخدمات العامة'
+        manufacturing: 'التصنيع والصناعة الذكية'
       },
       descs: {
         ecommerceDesc: 'متاجر إلكترونية ومنصات متعددة البائعين، أنظمة نقاط بيع للمتاجر، ومزامنة المخزون الفورية.',
@@ -560,11 +542,7 @@ export const translations = {
         logisticsDesc: 'تتبع الشاحنات بالجي بي إس، إدارة توزيع العمالة، وأتمتة مخازن الشحن وتحديد المسارات.',
         travelDesc: 'محركات حجز الفنادق، إدارة جداول الرحلات، واجهات تذاكر الطيران والفوترة متعددة العملات.',
         realestateDesc: 'بوابات عرض العقارات، أدوات إدارة المستأجرين، وأتمتة عقود الإيجار والجولات الافتراضية.',
-        manufacturingDesc: 'لوحات قياس إنترنت الأشياء الصناعية، مخزون سلاسل الإمداد، وتتبع صيانة الآلات.',
-        professionalDesc: 'بوابات العملاء، برمجيات تتبع الوقت، أتمتة المستندات القانونية ولوحات الاستشارات.',
-        startupsDesc: 'تطوير النماذج الأولية السريعة MVP، البنية السحابية القابلة للتوسع، وتطوير برمجيات SaaS.',
-        mediaDesc: 'إدارة الأصول الرقمية DAM، البنية التحتية لبث الفيديو، وشبكات توصيل المحتوى.',
-        governmentDesc: 'بوابات المواطنين الحكومية، بنية معالجة المعاشات، والتحقق من الهوية والإدارة البلدية.'
+        manufacturingDesc: 'لوحات قياس إنترنت الأشياء الصناعية، مخزون سلاسل الإمداد، وتتبع صيانة الآلات.'
       }
     },
     ourPortfolio: {

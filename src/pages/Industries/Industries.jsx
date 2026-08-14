@@ -8,11 +8,7 @@ import {
   Truck,
   Plane,
   Building2,
-  Factory,
-  Briefcase,
-  Rocket,
-  Film,
-  Building
+  Factory
 } from 'lucide-react';
 import './Industries.css';
 
@@ -67,30 +63,6 @@ export default function Industries() {
       key: 'industries.items.manufacturing',
       descKey: 'industries.descs.manufacturingDesc',
       icon: Factory
-    },
-    {
-      id: 'professional',
-      key: 'industries.items.professional',
-      descKey: 'industries.descs.professionalDesc',
-      icon: Briefcase
-    },
-    {
-      id: 'startups',
-      key: 'industries.items.startups',
-      descKey: 'industries.descs.startupsDesc',
-      icon: Rocket
-    },
-    {
-      id: 'media',
-      key: 'industries.items.media',
-      descKey: 'industries.descs.mediaDesc',
-      icon: Film
-    },
-    {
-      id: 'government',
-      key: 'industries.items.government',
-      descKey: 'industries.descs.governmentDesc',
-      icon: Building
     }
   ];
 

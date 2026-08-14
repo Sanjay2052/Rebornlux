@@ -24,7 +24,7 @@ export const SERVICES = [
     titleKey: 'services.items.mobile.title',
     descKey: 'services.items.mobile.desc',
     icon: Smartphone,
-    techStack: ['Flutter', 'Dart'],
+    techStack: ['Flutter'],
     features: ['Cross-platform Apps', 'Native Performance', 'Offline Data Sync']
   },
   {

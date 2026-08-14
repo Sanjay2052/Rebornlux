@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="nav-cta-desktop">
           <div className="lang-switcher-pill">
             <Globe size={14} className="lang-globe-icon" />
-            <button 
+            <button
               className={`lang-option ${language === 'en' ? 'active' : ''}`}
               onClick={() => setLanguage('en')}
               aria-label="Switch to English"
@@ -82,7 +82,7 @@ export default function Navbar() {
               EN
             </button>
             <span className="lang-divider">|</span>
-            <button 
+            <button
               className={`lang-option ${language === 'ar' ? 'active' : ''}`}
               onClick={() => setLanguage('ar')}
               aria-label="Switch to Arabic"
@@ -103,21 +103,21 @@ export default function Navbar() {
         {/* Mobile Action Group */}
         <div className="nav-mobile-right">
           <div className="lang-switcher-pill mobile">
-            <button 
+            <button
               className={`lang-option ${language === 'en' ? 'active' : ''}`}
               onClick={() => setLanguage('en')}
             >
               EN
             </button>
             <span className="lang-divider">|</span>
-            <button 
+            <button
               className={`lang-option ${language === 'ar' ? 'active' : ''}`}
               onClick={() => setLanguage('ar')}
             >
               عربي
             </button>
           </div>
-          
+
           <button
             className="nav-toggle"
             onClick={() => setIsOpen(!isOpen)}

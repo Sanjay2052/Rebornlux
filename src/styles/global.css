@@ -72,7 +72,12 @@ body::after {
 }
 
 /* Typography settings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--text-primary);
   font-weight: 700;
@@ -121,7 +126,8 @@ a {
 }
 
 /* Interactive elements */
-button, .btn {
+button,
+.btn {
   font-family: var(--font-body);
   font-weight: 600;
   cursor: pointer;

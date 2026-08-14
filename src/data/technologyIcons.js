@@ -76,11 +76,6 @@ export const TECH_ICONS = {
     React.createElement('path', { d: 'M13.5 2L4 11.5L7.5 15L17 5.5L13.5 2Z', fill: '#47C5FB' }),
     React.createElement('path', { d: 'M12 13L8.5 16.5L12 20L15.5 16.5L12 13Z', fill: '#02569B' })
   ),
-  'Dart': React.createElement(
-    'svg',
-    { width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg' },
-    React.createElement('path', { d: 'M4 14L8 4H18L20 9L12 20L4 14Z', fill: '#0175C2' })
-  ),
   'PostgreSQL': React.createElement(
     'svg',
     { width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none', xmlns: 'http://www.w3.org/2000/svg' },

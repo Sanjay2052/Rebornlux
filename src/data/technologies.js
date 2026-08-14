@@ -27,8 +27,7 @@ export const TECHNOLOGIES = [
   { name: 'FastAPI', category: 'backend', descKey: 'techStack.items.fastapiDesc', desc: 'High-performance framework for modern API development.' },
 
   // Mobile
-  { name: 'Flutter', category: 'mobile', descKey: 'techStack.items.flutterDesc', desc: 'Cross-platform UI toolkit powered by Dart for mobile, web, and desktop applications.' },
-  { name: 'Dart', category: 'mobile', descKey: 'techStack.items.dartDesc', desc: 'Modern programming language optimized for building fast, cross-platform applications.' },
+  { name: 'Flutter', category: 'mobile', descKey: 'techStack.items.flutterDesc', desc: 'Cross-platform UI toolkit for mobile, web, and desktop applications.' },
 
   // Database
   { name: 'PostgreSQL', category: 'database', descKey: 'techStack.items.postgresDesc', desc: 'Advanced open-source relational database.' },

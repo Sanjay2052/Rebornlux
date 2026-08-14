@@ -221,7 +221,7 @@ export default function Hero() {
         <div className="hero-visual-col">
           <div className="tech-3d-visual">
             <div className="glowing-core-glow"></div>
-            
+
             {/* Quantum Core Emblem */}
             <div className="quantum-core">
               <div className="core-crystal">
@@ -229,7 +229,7 @@ export default function Hero() {
               </div>
               <div className="laser-ring"></div>
             </div>
-            
+
             {/* Multi-Axis Orbital Holographic Rings */}
             <div className="orbital-ring ring-1">
               <span className="orbit-node node-1"></span>
@@ -242,16 +242,34 @@ export default function Hero() {
 
             {/* Connecting Laser Beams Overlay SVG */}
             <svg className="tech-beam-svg" viewBox="0 0 440 440">
-              <line x1="220" y1="220" x2="310" y2="30" className="laser-beam beam-react" />
-              <line x1="220" y1="220" x2="380" y2="140" className="laser-beam beam-node" />
-              <line x1="220" y1="220" x2="390" y2="280" className="laser-beam beam-flutter" />
-              <line x1="220" y1="220" x2="280" y2="400" className="laser-beam beam-mongo" />
-              <line x1="220" y1="220" x2="50" y2="340" className="laser-beam beam-cloud" />
-              <line x1="220" y1="220" x2="40" y2="170" className="laser-beam beam-ai" />
-              <line x1="220" y1="220" x2="90" y2="45" className="laser-beam beam-python" />
+              <line x1="220" y1="220" x2="110" y2="55" className="laser-beam beam-python" />
+              <line x1="220" y1="220" x2="70" y2="195" className="laser-beam beam-next" />
+              <line x1="220" y1="220" x2="125" y2="345" className="laser-beam beam-cloud" />
+              <line x1="220" y1="220" x2="220" y2="60" className="laser-beam beam-react" />
+              <line x1="220" y1="220" x2="325" y2="127" className="laser-beam beam-node" />
+              <line x1="220" y1="220" x2="330" y2="277" className="laser-beam beam-flutter" />
+              <line x1="220" y1="220" x2="220" y2="380" className="laser-beam beam-mongo" />
             </svg>
 
             {/* Floating Light Theme Tech Stack Cards */}
+            <div className="floating-tech-pill pill-python">
+              <div className="pill-badge-icon icon-python"><FileCode size={15} /></div>
+              <span>Python</span>
+              <span className="pill-status-dot"></span>
+            </div>
+
+            <div className="floating-tech-pill pill-next">
+              <div className="pill-badge-icon icon-next"><Globe size={15} /></div>
+              <span>Next.js</span>
+              <span className="pill-status-dot"></span>
+            </div>
+
+            <div className="floating-tech-pill pill-cloud">
+              <div className="pill-badge-icon icon-cloud"><Cloud size={15} /></div>
+              <span>AWS Cloud</span>
+              <span className="pill-status-dot"></span>
+            </div>
+
             <div className="floating-tech-pill pill-react">
               <div className="pill-badge-icon icon-react"><Code2 size={15} /></div>
               <span>React</span>
@@ -270,27 +288,9 @@ export default function Hero() {
               <span className="pill-status-dot"></span>
             </div>
 
-            <div className="floating-tech-pill pill-python">
-              <div className="pill-badge-icon icon-python"><FileCode size={15} /></div>
-              <span>Python</span>
-              <span className="pill-status-dot"></span>
-            </div>
-
             <div className="floating-tech-pill pill-mongo">
               <div className="pill-badge-icon icon-mongo"><Database size={15} /></div>
               <span>MongoDB</span>
-              <span className="pill-status-dot"></span>
-            </div>
-
-            <div className="floating-tech-pill pill-cloud">
-              <div className="pill-badge-icon icon-cloud"><Cloud size={15} /></div>
-              <span>AWS Cloud</span>
-              <span className="pill-status-dot"></span>
-            </div>
-
-            <div className="floating-tech-pill pill-ai">
-              <div className="pill-badge-icon icon-ai"><Cpu size={15} /></div>
-              <span>AI Engine</span>
               <span className="pill-status-dot"></span>
             </div>
           </div>

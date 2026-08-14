@@ -57,7 +57,7 @@
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 48px;
@@ -423,7 +423,7 @@
 .beam-flutter { stroke: rgba(2, 132, 199, 0.45); }
 .beam-mongo { stroke: rgba(16, 185, 129, 0.45); }
 .beam-cloud { stroke: rgba(217, 119, 6, 0.45); }
-.beam-ai { stroke: rgba(147, 51, 234, 0.45); }
+.beam-next { stroke: rgba(15, 23, 42, 0.45); }
 .beam-python { stroke: rgba(217, 119, 6, 0.5); }
 
 @keyframes laserPulse {
@@ -472,7 +472,8 @@
 /* Brand Specific Colors & Light Shadows */
 .pill-react {
   top: 15px;
-  right: 120px;
+  left: 50%;
+  transform: translateX(-50%);
   border: 1px solid rgba(0, 180, 216, 0.35);
   box-shadow: 0 8px 20px rgba(0, 180, 216, 0.15);
   animation-delay: 0s;
@@ -480,13 +481,13 @@
 .pill-react:hover {
   border-color: #00b4d8;
   box-shadow: 0 12px 28px rgba(0, 180, 216, 0.3);
-  transform: scale(1.1) translateY(-4px) !important;
+  transform: translateX(-50%) scale(1.08) translateY(-4px) !important;
 }
 .icon-react { background: linear-gradient(135deg, #00b4d8, #0077b6); }
 
 .pill-node {
-  top: 110px;
-  right: -10px;
+  top: 105px;
+  right: 0px;
   border: 1px solid rgba(34, 197, 94, 0.35);
   box-shadow: 0 8px 20px rgba(34, 197, 94, 0.15);
   animation-delay: 1.2s;
@@ -494,13 +495,13 @@
 .pill-node:hover {
   border-color: #22c55e;
   box-shadow: 0 12px 28px rgba(34, 197, 94, 0.3);
-  transform: scale(1.1) translateY(-4px) !important;
+  transform: scale(1.08) translateY(-4px) !important;
 }
 .icon-node { background: linear-gradient(135deg, #22c55e, #15803d); }
 
 .pill-flutter {
-  top: 250px;
-  right: -15px;
+  top: 255px;
+  right: 0px;
   border: 1px solid rgba(2, 132, 199, 0.35);
   box-shadow: 0 8px 20px rgba(2, 132, 199, 0.15);
   animation-delay: 2.4s;
@@ -508,13 +509,13 @@
 .pill-flutter:hover {
   border-color: #0284c7;
   box-shadow: 0 12px 28px rgba(2, 132, 199, 0.3);
-  transform: scale(1.1) translateY(-4px) !important;
+  transform: scale(1.08) translateY(-4px) !important;
 }
 .icon-flutter { background: linear-gradient(135deg, #38bdf8, #0284c7); }
 
 .pill-python {
-  top: 30px;
-  left: 20px;
+  top: 25px;
+  left: 0px;
   border: 1px solid rgba(217, 119, 6, 0.35);
   box-shadow: 0 8px 20px rgba(217, 119, 6, 0.15);
   animation-delay: 2.1s;
@@ -522,13 +523,14 @@
 .pill-python:hover {
   border-color: #d97706;
   box-shadow: 0 12px 28px rgba(217, 119, 6, 0.3);
-  transform: scale(1.1) translateY(-4px) !important;
+  transform: scale(1.08) translateY(-4px) !important;
 }
 .icon-python { background: linear-gradient(135deg, #0284c7, #d97706); }
 
 .pill-mongo {
-  bottom: 10px;
-  right: 120px;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   border: 1px solid rgba(16, 185, 129, 0.35);
   box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
   animation-delay: 1.8s;
@@ -536,13 +538,13 @@
 .pill-mongo:hover {
   border-color: #10b981;
   box-shadow: 0 12px 28px rgba(16, 185, 129, 0.3);
-  transform: scale(1.1) translateY(-4px) !important;
+  transform: translateX(-50%) scale(1.08) translateY(-4px) !important;
 }
 .icon-mongo { background: linear-gradient(135deg, #10b981, #047857); }
 
 .pill-cloud {
-  bottom: 70px;
-  left: -15px;
+  bottom: 55px;
+  left: 0px;
   border: 1px solid rgba(217, 119, 6, 0.35);
   box-shadow: 0 8px 20px rgba(217, 119, 6, 0.15);
   animation-delay: 3s;
@@ -550,23 +552,23 @@
 .pill-cloud:hover {
   border-color: #f59e0b;
   box-shadow: 0 12px 28px rgba(245, 158, 11, 0.3);
-  transform: scale(1.1) translateY(-4px) !important;
+  transform: scale(1.08) translateY(-4px) !important;
 }
 .icon-cloud { background: linear-gradient(135deg, #f59e0b, #d97706); }
 
-.pill-ai {
-  top: 140px;
-  left: -25px;
-  border: 1px solid rgba(147, 51, 234, 0.35);
-  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.15);
+.pill-next {
+  top: 170px;
+  left: -10px;
+  border: 1px solid rgba(15, 23, 42, 0.25);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
   animation-delay: 1.6s;
 }
-.pill-ai:hover {
-  border-color: #9333ea;
-  box-shadow: 0 12px 28px rgba(147, 51, 234, 0.3);
-  transform: scale(1.1) translateY(-4px) !important;
+.pill-next:hover {
+  border-color: #0f172a;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+  transform: scale(1.08) translateY(-4px) !important;
 }
-.icon-ai { background: linear-gradient(135deg, #c084fc, #9333ea); }
+.icon-next { background: linear-gradient(135deg, #0f172a, #334155); }
 
 @keyframes floatPill {
   0% { transform: translateY(0px); }
@@ -703,11 +705,11 @@
     height: 22px;
   }
 
-  .pill-react { top: 10px; right: 50px; }
-  .pill-node { top: 80px; right: -10px; }
-  .pill-flutter { top: 180px; right: -10px; }
-  .pill-python { top: 25px; left: 10px; }
-  .pill-mongo { bottom: 10px; right: 50px; }
-  .pill-cloud { bottom: 50px; left: -10px; }
-  .pill-ai { top: 130px; left: -15px; }
+  .pill-react { top: 10px; left: 50%; transform: translateX(-50%); }
+  .pill-node { top: 75px; right: 0; }
+  .pill-flutter { top: 175px; right: 0; }
+  .pill-python { top: 15px; left: 0; }
+  .pill-next { top: 110px; left: -10px; }
+  .pill-mongo { bottom: 10px; left: 50%; transform: translateX(-50%); }
+  .pill-cloud { bottom: 35px; left: 0; }
 }
