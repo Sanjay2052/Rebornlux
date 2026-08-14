@@ -27,7 +27,7 @@ export default function Navbar() {
     { name: t('nav.solutions'), href: '#solutions' },
     { name: t('nav.about'), href: '#about' },
     { name: t('nav.industries'), href: '#industries' },
-    { name: t('nav.successStories'), href: '#success-stories' },
+    { name: t('nav.ourPortfolio'), href: '#portfolio' },
     { name: t('nav.contact'), href: '#contact' },
   ];
 

@@ -65,7 +65,7 @@ export default function Footer() {
               <li><a href="#about" onClick={(e) => handleScrollClick(e, '#about')}>{t('nav.about')}</a></li>
               <li><a href="#services" onClick={(e) => handleScrollClick(e, '#services')}>{t('nav.services')}</a></li>
               <li><a href="#industries" onClick={(e) => handleScrollClick(e, '#industries')}>{t('nav.industries')}</a></li>
-              <li><a href="#success-stories" onClick={(e) => handleScrollClick(e, '#success-stories')}>{t('nav.successStories')}</a></li>
+              <li><a href="#portfolio" onClick={(e) => handleScrollClick(e, '#portfolio')}>{t('nav.ourPortfolio')}</a></li>
               <li><a href="#contact" onClick={(e) => handleScrollClick(e, '#contact')}>{t('footer.links.careers')}</a></li>
               <li><a href="#contact" onClick={(e) => handleScrollClick(e, '#contact')}>{t('nav.contact')}</a></li>
             </ul>

@@ -6,7 +6,7 @@ export const translations = {
       solutions: 'Solutions',
       about: 'About Us',
       industries: 'Industries',
-      successStories: 'Success Stories',
+      ourPortfolio: 'Our Portfolio',
       contact: 'Contact',
       getStarted: 'Book The Call',
       langToggle: 'العربية'
@@ -176,10 +176,10 @@ export const translations = {
         governmentDesc: 'Public sector citizen portals, pension processing infrastructure, identity verification, and municipal administration.'
       }
     },
-    successStories: {
-      badge: 'REAL-WORLD IMPACT',
-      title: 'Success Stories',
-      subtitle: 'Explore real-world software platforms, client engagements, and innovative digital products built by Rebornlux Digital.',
+    ourPortfolio: {
+      badge: 'OUR PORTFOLIO',
+      title: 'Our Portfolio',
+      subtitle: 'Showcasing our latest digital transformations and innovative solutions',
       viewProject: 'View Project Details',
       keyResults: 'Core Architecture & Features',
       technologies: 'Technologies Used',
@@ -236,6 +236,69 @@ export const translations = {
           ]
         }
       }
+    },
+    testimonials: {
+      badge: 'CLIENT REVIEWS',
+      title: 'What Our Clients Say',
+      subtitle: "Real experiences from businesses we've transformed",
+      items: [
+        {
+          id: 1,
+          name: 'Sudhir Katorawala',
+          role: 'Director, Uma Enterprise',
+          quote: 'The dealer portal Ferralabs built for Uma Enterprise is exactly what we needed. It saves time, keeps orders organized, and even our dealers are happy with the ease of access.',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 2,
+          name: 'Tejas Mungra',
+          role: 'Owner, R&T Turnomatics',
+          quote: "R&T Turnomatics got a serious upgrade — website, quote system, dealer logins, all working smooth. Thanks to Ferralabs, we've seen more leads convert just because the portal works 24×7.",
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 3,
+          name: 'Preeti Desai',
+          role: 'Marketing Lead, Arya Precision Tools',
+          quote: 'The client and agent portal built for Arya Precision Tools simplified our workflow completely. Our customers and agents frequently compliment us on how professional everything feels now.',
+          avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 4,
+          name: 'Khushi Jariwala',
+          role: 'Founder, The Kalashi',
+          quote: "They built my website 'The Kalashi' from scratch — it's clean, elegant and really shows my artwork well. I've seen more inquiries just because now people can easily view my murals online.",
+          avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 5,
+          name: 'Rajiv Patel',
+          role: 'Co-founder, Shakti Metals',
+          quote: 'The custom operational system streamlined our inventory tracking and client orders, making a huge impact for a small manufacturing setup like ours.',
+          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 6,
+          name: 'Ankit Solanki',
+          role: 'Tech Lead, Gaurav Brass Works',
+          quote: 'Their database work was next level. What used to crash now scales easily. Backend never felt this solid before.',
+          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 7,
+          name: 'Manan Shah',
+          role: 'Founder, Nova Tech Components',
+          quote: "They didn't just make a site, they understood our entire business model. The automation workflows they set up now run half our backend.",
+          avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 8,
+          name: 'Omar Aldayat',
+          role: 'Founder, 5SUMAT',
+          quote: 'Working with the team was an excellent experience. They understood our vision, delivered a smooth and reliable platform, and helped turn our ideas into a powerful digital marketplace. The result exceeded our expectations.',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+        }
+      ]
     },
     about: {
       badge: 'About Rebornlux Digital',
@@ -334,7 +397,7 @@ export const translations = {
       solutions: 'الحلول البرمجية',
       about: 'عن الشركة',
       industries: 'القطاعات',
-      successStories: 'قصص النجاح',
+      ourPortfolio: 'معرض أعمالنا',
       contact: 'اتصل بنا',
       getStarted: 'احجز المكالمة',
       langToggle: 'English'
@@ -504,10 +567,10 @@ export const translations = {
         governmentDesc: 'بوابات المواطنين الحكومية، بنية معالجة المعاشات، والتحقق من الهوية والإدارة البلدية.'
       }
     },
-    successStories: {
-      badge: 'تأثير واقعي',
-      title: 'قصص النجاح',
-      subtitle: 'استكشف منصات برمجية حقيقية، مشاريع العملاء، والمنتجات الرقمية المبتكرة التي طورها فريق ريبورن لوكس ديجيتال.',
+    ourPortfolio: {
+      badge: 'معرض أعمالنا',
+      title: 'معرض أعمالنا',
+      subtitle: 'استعرض أحدث التحولات الرقمية والحلول الابتكارية التي قمنا بتطويرها',
       viewProject: 'عرض تفاصيل المشروع',
       keyResults: 'البنية المتقدمة والمميزات',
       technologies: 'التقنيات المستخدمة',
@@ -564,6 +627,69 @@ export const translations = {
           ]
         }
       }
+    },
+    testimonials: {
+      badge: 'آراء العملاء',
+      title: 'ما يقوله عملاؤنا',
+      subtitle: 'تجارب حقيقية من شركات قمنا بتطوير أنظمتها الرقمية',
+      items: [
+        {
+          id: 1,
+          name: 'سودير كاتوروالا',
+          role: 'مدير، أوما إنتربرايز',
+          quote: 'بوابة الوكلاء التي تم بناؤها لشركة أوما إنتربرايز هي بالضبط ما نحتاجه. توفر الوقت وتنظم الطلبات وتسهل الوصول على وكلائنا.',
+          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 2,
+          name: 'تيجاس مونجرا',
+          role: 'مالك، R&T تورنوماتيكس',
+          quote: 'حصلت R&T تورنوماتيكس على تطوير شامل — موقع إلكتروني، نظام تسعير، وتسجيل دخول الوكلاء. زادت التحويلات بفضل عمل البوابة على مدار الساعة.',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 3,
+          name: 'بريتي ديساي',
+          role: 'قائد التسويق، آريا بريسيجن تولز',
+          quote: 'بوابة العملاء والوكلاء بًنيت باحترافية كاملة واستمعنا لإشادات مستمرة من عملائنا حول مدى سهولة واحترافية النظام.',
+          avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 4,
+          name: 'خوشي جاريوالا',
+          role: 'مؤسس، الكلاشي',
+          quote: 'قاموا ببناء موقعي "الكلاشي" من الصفر — إنه نظيف وأنيق ويعرض أعمالي الفنية بشكل رائع للغاية، مما زاد استفسارات العملاء.',
+          avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 5,
+          name: 'راجيف باتيل',
+          role: 'مؤسس مشارك، شاكتي ميتالز',
+          quote: 'النظام التشغيلي المخصص بسّط تتبع المخزون وطلبات العملاء، مما أحدث تأثيراً كبيراً لمصنع صغير مثل مصنعنا.',
+          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 6,
+          name: 'أنكيت سولانكي',
+          role: 'القائد التقني، جوراف براس وركس',
+          quote: 'كانت أعمال قواعد البيانات في مستوى آخر. ما كان ينهار سابقاً أصبح يتوسع بسهولة الآن، والأنظمة الخلفية أصبحت صلبة للغاية.',
+          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 7,
+          name: 'مانان شاه',
+          role: 'مؤسس، نوفا تيك كومبوننتس',
+          quote: 'لم يكتفوا ببناء موقع فحسب، بل فهموا نموذج أعمالنا بالكامل. مسارات العمل المؤتمتة التي أنشأوها تدير الآن نصف أنظمتنا.',
+          avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80'
+        },
+        {
+          id: 8,
+          name: 'عمر الضيات',
+          role: 'مؤسس، 5SUMAT',
+          quote: 'كانت التجربة مع الفريق ممتازة للغاية. فهموا رؤيتنا، وقدموا منصة سلسة وموثوقة، وساعدونا في تحويل أفكارنا إلى سوق رقمي قوي. تجاوزت النتيجة توقعاتنا.',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+        }
+      ]
     },
     about: {
       badge: 'عن ريبورن لوكس ديجيتال',

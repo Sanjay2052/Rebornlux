@@ -7,7 +7,8 @@ import Solutions from '../pages/Solutions/Solutions';
 import Services from '../pages/Services/Services';
 import Industries from '../pages/Industries/Industries';
 import SupportedTech from '../widgets/SupportedTech/SupportedTech';
-import SuccessStories from '../widgets/SuccessStories/SuccessStories';
+import OurPortfolio from '../widgets/OurPortfolio/OurPortfolio';
+import Testimonials from '../widgets/Testimonials/Testimonials';
 import PowerUpCTA from '../widgets/PowerUpCTA/PowerUpCTA';
 import About from '../pages/About/About';
 import Contact from '../pages/Contact/Contact';
@@ -43,7 +44,8 @@ export default function AppRoutes() {
         <Services />
         <Industries />
         <SupportedTech />
-        <SuccessStories />
+        <OurPortfolio />
+        <Testimonials />
         <About />
         <PowerUpCTA />
         <Contact />
