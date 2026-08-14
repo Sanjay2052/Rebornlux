@@ -435,6 +435,16 @@
 .floating-tech-pill {
   position: absolute;
   z-index: 5;
+  animation: floatPill 5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.floating-tech-pill:hover {
+  animation-play-state: paused;
+  z-index: 20;
+}
+
+.pill-inner {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -447,8 +457,13 @@
   align-items: center;
   gap: 10px;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
-  animation: floatPill 5s ease-in-out infinite alternate;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+.floating-tech-pill:hover .pill-inner {
+  transform: scale(1.06);
 }
 
 .pill-status-dot {
@@ -473,106 +488,118 @@
 .pill-react {
   top: 15px;
   left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid rgba(0, 180, 216, 0.35);
-  box-shadow: 0 8px 20px rgba(0, 180, 216, 0.15);
+  animation: floatPillCenter 5s ease-in-out infinite alternate;
   animation-delay: 0s;
 }
-.pill-react:hover {
+.pill-react .pill-inner {
+  border: 1px solid rgba(0, 180, 216, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 180, 216, 0.15);
+}
+.pill-react:hover .pill-inner {
   border-color: #00b4d8;
-  box-shadow: 0 12px 28px rgba(0, 180, 216, 0.3);
-  transform: translateX(-50%) scale(1.08) translateY(-4px) !important;
+  box-shadow: 0 14px 32px rgba(0, 180, 216, 0.35);
 }
 .icon-react { background: linear-gradient(135deg, #00b4d8, #0077b6); }
 
 .pill-node {
   top: 105px;
   right: 0px;
-  border: 1px solid rgba(34, 197, 94, 0.35);
-  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.15);
   animation-delay: 1.2s;
 }
-.pill-node:hover {
+.pill-node .pill-inner {
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.15);
+}
+.pill-node:hover .pill-inner {
   border-color: #22c55e;
-  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.3);
-  transform: scale(1.08) translateY(-4px) !important;
+  box-shadow: 0 14px 32px rgba(34, 197, 94, 0.35);
 }
 .icon-node { background: linear-gradient(135deg, #22c55e, #15803d); }
 
 .pill-flutter {
   top: 255px;
   right: 0px;
-  border: 1px solid rgba(2, 132, 199, 0.35);
-  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.15);
   animation-delay: 2.4s;
 }
-.pill-flutter:hover {
+.pill-flutter .pill-inner {
+  border: 1px solid rgba(2, 132, 199, 0.35);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.15);
+}
+.pill-flutter:hover .pill-inner {
   border-color: #0284c7;
-  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.3);
-  transform: scale(1.08) translateY(-4px) !important;
+  box-shadow: 0 14px 32px rgba(2, 132, 199, 0.35);
 }
 .icon-flutter { background: linear-gradient(135deg, #38bdf8, #0284c7); }
 
 .pill-python {
   top: 25px;
   left: 0px;
-  border: 1px solid rgba(217, 119, 6, 0.35);
-  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.15);
   animation-delay: 2.1s;
 }
-.pill-python:hover {
+.pill-python .pill-inner {
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.15);
+}
+.pill-python:hover .pill-inner {
   border-color: #d97706;
-  box-shadow: 0 12px 28px rgba(217, 119, 6, 0.3);
-  transform: scale(1.08) translateY(-4px) !important;
+  box-shadow: 0 14px 32px rgba(217, 119, 6, 0.35);
 }
 .icon-python { background: linear-gradient(135deg, #0284c7, #d97706); }
 
 .pill-mongo {
   bottom: 15px;
   left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+  animation: floatPillCenter 5s ease-in-out infinite alternate;
   animation-delay: 1.8s;
 }
-.pill-mongo:hover {
+.pill-mongo .pill-inner {
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+}
+.pill-mongo:hover .pill-inner {
   border-color: #10b981;
-  box-shadow: 0 12px 28px rgba(16, 185, 129, 0.3);
-  transform: translateX(-50%) scale(1.08) translateY(-4px) !important;
+  box-shadow: 0 14px 32px rgba(16, 185, 129, 0.35);
 }
 .icon-mongo { background: linear-gradient(135deg, #10b981, #047857); }
 
 .pill-cloud {
   bottom: 55px;
   left: 0px;
-  border: 1px solid rgba(217, 119, 6, 0.35);
-  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.15);
   animation-delay: 3s;
 }
-.pill-cloud:hover {
+.pill-cloud .pill-inner {
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.15);
+}
+.pill-cloud:hover .pill-inner {
   border-color: #f59e0b;
-  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.3);
-  transform: scale(1.08) translateY(-4px) !important;
+  box-shadow: 0 14px 32px rgba(245, 158, 11, 0.35);
 }
 .icon-cloud { background: linear-gradient(135deg, #f59e0b, #d97706); }
 
 .pill-next {
   top: 170px;
   left: -10px;
-  border: 1px solid rgba(15, 23, 42, 0.25);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
   animation-delay: 1.6s;
 }
-.pill-next:hover {
+.pill-next .pill-inner {
+  border: 1px solid rgba(15, 23, 42, 0.25);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+.pill-next:hover .pill-inner {
   border-color: #0f172a;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
-  transform: scale(1.08) translateY(-4px) !important;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.3);
 }
 .icon-next { background: linear-gradient(135deg, #0f172a, #334155); }
 
 @keyframes floatPill {
   0% { transform: translateY(0px); }
   100% { transform: translateY(-14px); }
+}
+
+@keyframes floatPillCenter {
+  0% { transform: translateX(-50%) translateY(0px); }
+  100% { transform: translateX(-50%) translateY(-14px); }
 }
 
 /* Scroll to Explore Indicator */

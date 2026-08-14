@@ -253,45 +253,59 @@ export default function Hero() {
 
             {/* Floating Light Theme Tech Stack Cards */}
             <div className="floating-tech-pill pill-python">
-              <div className="pill-badge-icon icon-python"><FileCode size={15} /></div>
-              <span>Python</span>
-              <span className="pill-status-dot"></span>
+              <div className="pill-inner">
+                <div className="pill-badge-icon icon-python"><FileCode size={15} /></div>
+                <span>Python</span>
+                <span className="pill-status-dot"></span>
+              </div>
             </div>
 
             <div className="floating-tech-pill pill-next">
-              <div className="pill-badge-icon icon-next"><Globe size={15} /></div>
-              <span>Next.js</span>
-              <span className="pill-status-dot"></span>
+              <div className="pill-inner">
+                <div className="pill-badge-icon icon-next"><Globe size={15} /></div>
+                <span>Next.js</span>
+                <span className="pill-status-dot"></span>
+              </div>
             </div>
 
             <div className="floating-tech-pill pill-cloud">
-              <div className="pill-badge-icon icon-cloud"><Cloud size={15} /></div>
-              <span>AWS Cloud</span>
-              <span className="pill-status-dot"></span>
+              <div className="pill-inner">
+                <div className="pill-badge-icon icon-cloud"><Cloud size={15} /></div>
+                <span>AWS Cloud</span>
+                <span className="pill-status-dot"></span>
+              </div>
             </div>
 
             <div className="floating-tech-pill pill-react">
-              <div className="pill-badge-icon icon-react"><Code2 size={15} /></div>
-              <span>React</span>
-              <span className="pill-status-dot"></span>
+              <div className="pill-inner">
+                <div className="pill-badge-icon icon-react"><Code2 size={15} /></div>
+                <span>React</span>
+                <span className="pill-status-dot"></span>
+              </div>
             </div>
 
             <div className="floating-tech-pill pill-node">
-              <div className="pill-badge-icon icon-node"><Layers size={15} /></div>
-              <span>Node.js</span>
-              <span className="pill-status-dot"></span>
+              <div className="pill-inner">
+                <div className="pill-badge-icon icon-node"><Layers size={15} /></div>
+                <span>Node.js</span>
+                <span className="pill-status-dot"></span>
+              </div>
             </div>
 
             <div className="floating-tech-pill pill-flutter">
-              <div className="pill-badge-icon icon-flutter"><Smartphone size={15} /></div>
-              <span>Flutter</span>
-              <span className="pill-status-dot"></span>
+              <div className="pill-inner">
+                <div className="pill-badge-icon icon-flutter"><Smartphone size={15} /></div>
+                <span>Flutter</span>
+                <span className="pill-status-dot"></span>
+              </div>
             </div>
 
             <div className="floating-tech-pill pill-mongo">
-              <div className="pill-badge-icon icon-mongo"><Database size={15} /></div>
-              <span>MongoDB</span>
-              <span className="pill-status-dot"></span>
+              <div className="pill-inner">
+                <div className="pill-badge-icon icon-mongo"><Database size={15} /></div>
+                <span>MongoDB</span>
+                <span className="pill-status-dot"></span>
+              </div>
             </div>
           </div>
         </div>
