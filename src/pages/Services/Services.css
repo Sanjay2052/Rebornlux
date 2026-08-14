@@ -199,8 +199,15 @@
 }
 
 @keyframes modalFadeIn {
-  from { opacity: 0; transform: scale(0.95) translateY(10px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .modal-close-btn {
@@ -354,9 +361,11 @@
   .services-section {
     padding: 70px 0;
   }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
+
   .services-title {
     font-size: 2.2rem;
   }
@@ -366,25 +375,32 @@
   .services-container {
     padding: 0 16px;
   }
+
   .services-header {
     margin-bottom: 36px;
   }
+
   .services-title {
     font-size: 1.85rem;
   }
+
   .service-card {
     padding: 24px 18px;
     border-radius: 16px;
   }
+
   .service-modal-overlay {
     padding: 12px;
   }
+
   .service-modal-content {
     padding: 24px 18px;
   }
+
   .modal-actions {
     flex-direction: column;
   }
+
   .modal-cta-btn,
   .modal-cancel-btn {
     width: 100%;
