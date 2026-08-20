@@ -50,7 +50,7 @@
 .tech-categories-tabs {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
@@ -62,12 +62,13 @@
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   color: #475569;
-  padding: 10px 20px;
+  padding: 10px 16px;
   border-radius: 99px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .tech-tab-btn:hover {
@@ -92,12 +93,14 @@
   gap: 16px;
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  direction: ltr !important;
 }
 
 .tech-marquee-track {
   display: flex;
   gap: 20px;
   width: max-content;
+  direction: ltr !important;
 }
 
 .marquee-track-left {
@@ -122,12 +125,9 @@
   100% { transform: translateX(0); }
 }
 
-[dir="rtl"] .marquee-track-left {
-  animation: techMarqueeRight 70s linear infinite;
-}
-
-[dir="rtl"] .marquee-track-right {
-  animation: techMarqueeLeft 70s linear infinite;
+[dir="rtl"] .tech-card-pill {
+  direction: rtl;
+  text-align: right;
 }
 
 .tech-card-pill {
