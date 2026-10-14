@@ -94,7 +94,7 @@ export default function Footer() {
               </div>
               <div className="footer-info-item">
                 <Phone size={16} className="info-icon" />
-                <a href="tel:+17327435200" dir="ltr">+1 732-743-5200</a>
+                <a href="tel:+916282943480" dir="ltr">+91 6282 943 480</a>
               </div>
               <div className="footer-info-item">
                 <MapPin size={16} className="info-icon" />
