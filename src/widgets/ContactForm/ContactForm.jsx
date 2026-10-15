@@ -5,7 +5,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import './ContactForm.css';
 
 const GOOGLE_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycby8zpBcVBLb9o-sJYWaMOv4nS5-w-LdYWPUe5R5a5cKQHJZBfVzyfgY5N6oDdx3gh3Ddw/exec';
+  'https://script.google.com/macros/s/AKfycbwSryZx760ZSPGKakO_3ciovwR8-AvPBNc9fru2ToeyOApH9NhowNoU1PWt2FYfNAE8JA/exec';
 
 const INITIAL_FORM = {
   name: '',
