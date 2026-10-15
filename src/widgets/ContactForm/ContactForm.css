@@ -194,8 +194,17 @@
   letter-spacing: 0.04em;
 }
 
+/* Company is the only optional field: mark it so users can tell */
+.form-group label[for="contact-company"]::after {
+  content: " (optional)";
+  font-weight: 500;
+  text-transform: none;
+  color: #94a3b8;
+}
+
 .form-group input[type="text"],
 .form-group input[type="email"],
+.form-group input[type="tel"],
 .form-group select,
 .form-group textarea {
   background: #f8fafc;
@@ -246,6 +255,15 @@
 .btn-form-submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 210, 254, 0.4);
+}
+
+/* Saving state: button waits for the server to confirm */
+.btn-form-submit:disabled,
+.btn-form-submit.submitting {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 16px rgba(0, 119, 182, 0.15);
 }
 
 [dir="rtl"] .submit-icon {
